@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30516.212
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzurApi-cs", "AzurApi-cs\AzurApi-cs.csproj", "{EDC4B26F-1491-41C8-B7C7-EC7780D098B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDC4B26F-1491-41C8-B7C7-EC7780D098B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDC4B26F-1491-41C8-B7C7-EC7780D098B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDC4B26F-1491-41C8-B7C7-EC7780D098B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDC4B26F-1491-41C8-B7C7-EC7780D098B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D71AC522-EBFD-40AA-9628-16BD6FD8B0F2}
+	EndGlobalSection
+EndGlobal
