@@ -5,6 +5,10 @@
     <RootNamespace>AzurApi</RootNamespace>
     <AssemblyName>AzurApi</AssemblyName>
     <LangVersion>8.0</LangVersion>
+    <PackageId>AzurApi-cs</PackageId>
+    <Authors>xXBuilderBXx</Authors>
+    <Company>Fluxpoint Development</Company>
+    <Product>AzurApi-cs</Product>
   </PropertyGroup>
 
   <ItemGroup>

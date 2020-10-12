@@ -31,6 +31,8 @@ namespace AzurApi
         public ShipRetrofitProjectList? retrofitProjects;
         public ShipConstruction construction;
         public ShipObtained obtainedFrom;
+        public ShipMisc misc;
+        public ShipSkin[] skins;
         public ShipGallery[] gallery = new ShipGallery[0];
     }
     public class ShipNames
