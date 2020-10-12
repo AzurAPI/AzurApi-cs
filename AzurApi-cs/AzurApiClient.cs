@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -54,6 +55,16 @@ namespace AzurApi
             {
                 success = true
             };
+        }
+
+        public AzurShip GetShipById(string id)
+        {
+            return Ships.FirstOrDefault(x => x.id == id);
+        }
+
+        public IEnumerable<AzurShip> GetShipsByName(string name)
+        {
+            return Ships.Where(x => x.names.en.ToLower().Contains(name.ToLower()));
         }
     }
 }
