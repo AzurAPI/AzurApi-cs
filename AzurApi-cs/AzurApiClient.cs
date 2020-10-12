@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -12,44 +13,9 @@ namespace AzurApi
             Http = new HttpClient();
         }
         public readonly HttpClient Http;
-        
+        public AzurShip[] Ships { get; internal set; } = null;
 
-
-
-
-        internal async Task<AzurRequest> GetRequest(string url)
-        {
-            HttpResponseMessage Message = null;
-            try
-            {
-                Message = await Http.GetAsync(url);
-                return new AzurRequest
-                {
-                    success = true,
-                    code = 200
-                };
-            }
-            catch (HttpRequestException hex)
-            {
-                return new AzurRequest
-                {
-                    success = false,
-                    code = (int)Message.StatusCode,
-                    error = Message.ReasonPhrase ?? hex.Message
-                };
-            }
-            catch (Exception ex)
-            {
-                return new AzurRequest
-                {
-                    success = false,
-                    code = 0,
-                    error = $"AzurApi-cs lib error, {ex.Message}"
-                };
-            }
-        }
-
-        internal async Task<JObject> GetCustomRequest(string url)
+        internal async Task<JObject> GetRequest(string url)
         {
             HttpResponseMessage Message = null;
             try
@@ -78,5 +44,16 @@ namespace AzurApi
             }
         }
 
+        public async Task<AzurRequest> DownloadShips()
+        {
+            JObject Json = await GetRequest("https://raw.githubusercontent.com/AzurAPI/azurapi-js-setup/master/ships.json");
+            if (Json.ContainsKey("success"))
+                return Json.ToObject<AzurRequest>();
+            Ships = Json.ToObject<AzurShip[]>();
+            return new AzurRequest
+            {
+                success = true
+            };
+        }
     }
 }

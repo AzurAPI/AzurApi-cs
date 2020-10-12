@@ -7,7 +7,7 @@ namespace AzurApi
     public class AzurRequest
     {
         public bool success;
-        public int code;
+        public int code = 200;
         public string error;
     }
 }
